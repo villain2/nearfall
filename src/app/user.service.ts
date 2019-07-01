@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of as observableOf } from 'rxjs';
+import { of as observableOf } from 'rxjs';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { map, switchMap } from 'rxjs/operators';
 import { auth } from 'firebase';
