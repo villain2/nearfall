@@ -10,12 +10,21 @@
     The user is logged in. {{uid}}
     <div *ngIf="user.isAdmin | async">You are an administrator.</div>
     <div>
-        <button (click)="user.logout()">Logut</button>
+        <button class="btn btn-block btn-social btn-danger" (click)="user.logout()">Logut</button>
     </div>
 </div>
 
 <ng-template #login>
-    Please login: <button (click)="user.login()">Login</button>
+    Please login:
+    <button class="btn btn-primary btn-block btn-social btn-google" (click)="user.login()">
+        <span class="fa fa-google"></span>Login with Google
+    </button>
+    <button class="btn btn-primary btn-block btn-social btn-facebook" (click)="user.login()">
+        <span class="fa fa-facebook"></span>Login with Facebook
+    </button>
+    <button class="btn btn-primary btn-block btn-social btn-twitter" (click)="user.login()">
+        <span class="fa fa-twitter"></span>Login with Twitter
+    </button>
 </ng-template>
 
 <router-outlet></router-outlet>
