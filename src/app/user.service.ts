@@ -32,13 +32,27 @@ export class UserService {
   constructor(private afAuth: AngularFireAuth, private db: AngularFireDatabase ) { }
 
   // buttons
-    login ()
-    {
-        this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+    login (type) {
+        switch (type) {
+            case 'google':
+                this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+                break;
+
+            case 'facebook':
+                this.afAuth.auth.signInWithPopup(new auth.FacebookAuthProvider());
+                break;
+
+            case 'twitter':
+                this.afAuth.auth.signInWithPopup(new auth.TwitterAuthProvider());
+                break;
+
+            default:
+                this.afAuth.auth.signInWithPopup(new auth.EmailAuthProvider());
+                break;
+        }
     }
 
-    logout()
-    {
+    logout() {
         this.afAuth.auth.signOut();
     }
 }
