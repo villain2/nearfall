@@ -1,4 +1,4 @@
-<div class="mainContainer">
+<div class="mainContainer appBg">
     <div class="welcomeBlock">
         <h1>{{title}}</h1>
     </div>
@@ -19,6 +19,19 @@
             <button class="btn btn-primary btn-block btn-social" (click)="user.login(null)">
                 <span class="fa fa-mail-forward"></span>Login with Email
             </button>
+
+            <div *ngIf="user.loginWithEmail" class="loginEmailSection">
+                <form class="emailLoginForm">
+                    <mat-form-field class="emailLoginField md-inline-form">
+                        <label>
+                            <input matInput placeholder="your@email.com" />
+                        </label>
+                    </mat-form-field>
+                </form>
+                <button class="btn btn-primary" (click)="user.submitEmailAddress()">
+                    Submit
+                </button>
+            </div>
 
             <button class="btn btn-primary btn-block btn-social btn-google" (click)="user.login('google')">
                 <span class="fa fa-google"></span>Login with Google

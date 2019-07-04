@@ -2,20 +2,49 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import '~bootstrap-social/bootstrap-social.css';
 @import '~angular-material/angular-material.min.css';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
-.mainContainer {
-    background: #000;
-    color: #f2f2f2;
+body, html {
     width: 100%;
     height: 100%;
 }
 
+
+.mainContainer {
+    background: #000;
+    color: #f2f2f2;
+    input {
+        color: #ffffff;
+    }
+    width: 100%;
+    height: 100%;
+    &.appBg {
+        background-image: url("/assets/img/app_bg.png");
+        background-position: center center;
+        background-attachment: fixed;
+        background-size: cover;
+        background-color: #000000;
+    }
+}
+
 .welcomeBlock {
-    padding: 10% 0;
+    padding: 5% 0;
     text-align: center;
     h1 {
         color: #f3f3f3;
         letter-spacing: 0.5em;
+    }
+}
+
+.emailLoginSection {
+    margin-bottom: 8px;
+    background: #3044b5;
+    .emailLoginForm {
+        min-width: 250px;
+        max-width: 500px;
+        width: 100%;
+        background: #3044b5;
+        padding: 2px 9px;
     }
 }
 .mainContent {

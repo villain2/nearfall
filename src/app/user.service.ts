@@ -4,12 +4,13 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { map, switchMap } from 'rxjs/operators';
 import { auth } from 'firebase';
 import { AngularFireDatabase } from 'angularfire2/database';
-import {Observable} from 'rxjs/internal/Observable';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+    loginWithEmail = false;
     uid = this.afAuth.authState.pipe(
         map(authState => {
         if (!authState) {
@@ -21,13 +22,13 @@ export class UserService {
         );
     isAdmin: Observable<boolean> = this.uid.pipe(
         switchMap(uid => {
-            if(!uid) {
+            if (!uid) {
                 return observableOf(false);
             } else {
-                return this.db.object<boolean>('/admin/' + uid).valueChanges()
+                return this.db.object<boolean>('/admin/' + uid).valueChanges();
             }
         })
-    )
+    );
 
   constructor(private afAuth: AngularFireAuth, private db: AngularFireDatabase ) { }
 
@@ -47,12 +48,18 @@ export class UserService {
                 break;
 
             default:
-                this.afAuth.auth.signInWithPopup(new auth.EmailAuthProvider());
+                // this.afAuth.auth.signInWithPopup(new auth.EmailAuthProvider());
+                this.loginWithEmail = !this.loginWithEmail;
+                console.log(this.loginWithEmail);
                 break;
         }
     }
 
     logout() {
         this.afAuth.auth.signOut();
+    }
+
+    submitEmailAddress() {
+        console.log('submit email address');
     }
 }

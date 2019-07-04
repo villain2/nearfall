@@ -1,8 +1,11 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatCheckboxModule, MatInputModule } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +17,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+      BrowserAnimationsModule,
+      MatButtonModule, MatCheckboxModule, MatInputModule,
     AngularFireModule.initializeApp(
       {
         apiKey: "AIzaSyAnN0F6ez7gydK6k1LFw-vouqhmtuZHoRw",
@@ -27,6 +32,7 @@ import { AppComponent } from './app.component';
       AngularFireAuthModule,
       AngularFireDatabaseModule
   ],
+    exports: [MatInputModule, MatCheckboxModule, MatButtonModule],
   providers: [],
   bootstrap: [AppComponent]
 })
