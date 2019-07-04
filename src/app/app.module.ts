@@ -1,6 +1,8 @@
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+
 import { AngularFireModule} from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
@@ -9,13 +11,32 @@ import { MatButtonModule, MatCheckboxModule, MatInputModule } from '@angular/mat
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { TrendingComponent } from './components/trending/trending.component';
+import { EventsComponent } from './components/events/events.component';
+import { MatchComponent } from './components/match/match.component';
+import { NotificationsComponent } from './components/notifications/notifications.component';
+import { SignupService } from './services/signup.service';
+import { MatchesService } from './services/matches.service';
+
+const routes: Routes = [
+    {path: '', component: HomepageComponent}
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomepageComponent,
+    SignupComponent,
+    TrendingComponent,
+    EventsComponent,
+    MatchComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,
+      RouterModule.forRoot(routes),
     AppRoutingModule,
       BrowserAnimationsModule,
       MatButtonModule, MatCheckboxModule, MatInputModule,
@@ -32,8 +53,8 @@ import { AppComponent } from './app.component';
       AngularFireAuthModule,
       AngularFireDatabaseModule
   ],
-    exports: [MatInputModule, MatCheckboxModule, MatButtonModule],
-  providers: [],
+    exports: [MatInputModule, MatCheckboxModule, MatButtonModule, RouterModule],
+  providers: [SignupService, MatchesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

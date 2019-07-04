@@ -59,7 +59,7 @@ export class UserService {
         this.afAuth.auth.signOut();
     }
 
-    submitEmailAddress() {
-        console.log('submit email address');
+    static submitEmailAddress() {
+      console.log('submit email address');
     }
 }
