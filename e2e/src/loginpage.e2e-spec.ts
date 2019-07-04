@@ -17,6 +17,14 @@ describe('Logging In', () => {
         return browser.get('/')
             .then(() => LoginPage.googleButton.click())
             .then( () => browser.sleep(5000))
+            .then(() => browser.getAllWindowHandles().then((handles) => {
+                browser.driver.switchTo().window(handles[1]);
+                browser.driver.close();
+                browser.driver.switchTo().window(handles[0]);
+            }))
+            .then( () => browser.sleep(5000))
+            .then(() => LoginPage.twitterButton.click())
+            .then(() => browser.sleep(5000))
             .then(done)
             .catch((err: Error) => done.fail(err));
     });
