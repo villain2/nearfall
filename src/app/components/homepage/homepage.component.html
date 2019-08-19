@@ -1,8 +1,5 @@
+<app-toolbar></app-toolbar>
 <div class="mainContainer appBg">
-    <div class="welcomeBlock">
-        <h1>{{title}}</h1>
-    </div>
-
     <div class="mainContent">
 
         <div *ngIf="user.uid | async as uid; else login">
@@ -48,7 +45,6 @@
         </ng-template>
     </div>
 
-    <router-outlet></router-outlet>
 </div>
 
 

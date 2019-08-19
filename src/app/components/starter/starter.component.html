@@ -1,12 +1,41 @@
+
+<app-toolbar></app-toolbar>
+
 <div class="mainContainer appBg">
-    <div class="headerNav">
-        <h1>NearFall</h1>
-    </div>
+    <app-main-menu></app-main-menu>
 
     <div class="mainContent">
-        <div class="events featuredEvent">
-            <h2>AEW ALL OUT</h2>
-        </div>
+        <mat-card class="events">
+            <mat-card-header>
+                <div mat-card-avatar class="companyLogoAEW"></div>
+                <mat-card-title>AEW ALL OUT</mat-card-title>
+                <mat-card-subtitle>Saturday, August 31, 2019<br>Sears Center Arena : Hoffman Estates, IL</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="./assets/img/events/aew-all-out-2019.jpg" alt="AEW ALL OUT" />
+            <mat-card-content>
+
+            </mat-card-content>
+            <mat-card-actions class="eventButtons">
+                <button mat-raised-button>CARD</button>
+                <button mat-raised-button>VOTING</button>
+            </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="events">
+            <mat-card-header>
+                <div mat-card-avatar class="companyLogoAEW"></div>
+                <mat-card-title>NJPW ROYAL QUEST</mat-card-title>
+                <mat-card-subtitle>Saturday, August 31, 2019<br>Sears Center Arena : Hoffman Estates, IL</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="./assets/img/events/aew-all-out-2019.jpg" alt="AEW ALL OUT" />
+            <mat-card-content>
+
+            </mat-card-content>
+            <mat-card-actions class="eventButtons">
+                <button mat-raised-button>CARD</button>
+                <button mat-raised-button>VOTING</button>
+            </mat-card-actions>
+        </mat-card>
 
     </div>
 </div>
