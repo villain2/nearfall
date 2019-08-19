@@ -19,9 +19,12 @@ import { MatchComponent } from './components/match/match.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { SignupService } from './services/signup.service';
 import { MatchesService } from './services/matches.service';
+import { StarterComponent } from './components/starter/starter.component';
 
 const routes: Routes = [
-    {path: '', component: HomepageComponent}
+    {path: '', component: HomepageComponent},
+    {path: 'trending', component: TrendingComponent },
+    {path: 'starter', component: StarterComponent}
 ];
 
 @NgModule({
@@ -32,7 +35,8 @@ const routes: Routes = [
     TrendingComponent,
     EventsComponent,
     MatchComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    StarterComponent
   ],
   imports: [
     BrowserModule,

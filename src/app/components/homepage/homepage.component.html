@@ -9,6 +9,9 @@
             The user is logged in. {{uid}}
             <div *ngIf="user.isAdmin | async">You are an administrator.</div>
             <div>
+                <button class="btn btn-block btn-primary" routerLink="starter/">Enter</button>
+            </div>
+            <div>
                 <button class="btn btn-block btn-social btn-danger" (click)="user.logout()">Logout</button>
             </div>
         </div>

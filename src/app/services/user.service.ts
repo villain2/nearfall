@@ -22,9 +22,11 @@ export class UserService {
         );
     isAdmin: Observable<boolean> = this.uid.pipe(
         switchMap(uid => {
+            // detect if there is nothing in the uid then return false
             if (!uid) {
                 return observableOf(false);
             } else {
+                // return endpoint
                 return this.db.object<boolean>('/admin/' + uid).valueChanges();
             }
         })
@@ -56,7 +58,7 @@ export class UserService {
     }
 
     logout() {
-        this.afAuth.auth.signOut();
+      this.afAuth.auth.signOut();
     }
 
     static submitEmailAddress() {

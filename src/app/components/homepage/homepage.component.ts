@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -9,9 +10,7 @@ import { UserService } from '../../services/user.service';
 export class HomepageComponent implements OnInit {
 
     title = 'NearFall';
-    constructor(public user: UserService) {
-
-    }
+    constructor(public user: UserService) {}
 
   ngOnInit() {
   }
